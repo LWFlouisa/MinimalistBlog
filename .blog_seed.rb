@@ -71,17 +71,22 @@ def create_post
   html_end     = "</html>"
 
   ## RSS Encoding
-  rss_encoding = "<?xml version='1.0' encoding='UTF-8' ?>"
-  rss_begin    = "<rss version='2.0'>"
-  rss_channelT = "<channel>"
+  rss_encoding  = "<?xml version='1.0' encoding='UTF-8' ?>"
+  rss_begin     = "<rss version='2.0'>"
+  rss_channelT  = "<channel>"
+  rss_feed_name = "
+  <title>Personal Blog</title>
+  <link>http://localhost:8000/feed/feed.xml</link>
+  <description>Feed for my personal blog.</description>"
 
   rss_new_post = File.read("documents/new_post.txt").strip
 
   rss_formatted_new = "
+  <item>
   <title>#{rss_title}</title>
   <link>http://192.168.1.5:8000/Microblogger/feed/feed.xml</link>
   <description><![CDATA[#{rss_new_post}]]></description>
-  "
+  </item>"
 
   rss_total_post = "
   #{rss_formatted_new}
@@ -99,8 +104,8 @@ def create_post
     f.puts html_style
     f.puts html_hbottom
     f.puts html_bTop
-    f.puts '<center><h3><img src="http://192.168.1.5:8000/quickdial/me.jpg" alt="Avatar" class="avatar"><br />LWFlouisa</h3>'
-    f.puts "<a href=''><img src='http://192.168.1.5:8000/quickdial/socialmediabuttons/thumb.png' width='16px' height='16px'> Follow</a></center>" # Assign this later. Usually an RSS Feed.
+    f.puts '<center><h3><img src="http://192.168.1.5:8000/avatar/me.jpg" alt="Avatar" class="avatar"><br />LWFlouisa</h3>'
+    f.puts "<a href='http://192.168.1.5:8000/feed/feed.xml'><img src='http://192.168.1.5:8000/avatar/thumb.png' width='16px' height='16px'> Follow</a></center>" # Assign this later. Usually an RSS Feed.
     f.puts "<hr />"
     f.puts total_post
     f.puts html_bBottom
@@ -113,6 +118,7 @@ def create_post
     f.puts rss_encoding
     f.puts rss_begin
     f.puts rss_channelT
+    f.puts rss_feed_name
     f.puts rss_total_post
     f.puts rss_channelb
     f.puts rss_end
@@ -130,5 +136,5 @@ def create_post
 end
 
 ## Uncomment create_post and comment create_post when directories created.
-create_directories
-# create_post
+# create_directories
+create_post
