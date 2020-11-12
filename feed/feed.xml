@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<rss version='2.0'>
+<channel>
+
+  
+  <title>Thu 12 Nov 2020 01:56:48 PM EST</title>
+  <link>http://192.168.1.5:8000/Microblogger/feed/feed.xml</link>
+  <description><![CDATA[<h2>Testing RSS Appending</h2>
+
+<p>This is a test for RSS appending.</p>]]></description>
+  
+  <title>Thu 12 Nov 2020 01:56:29 PM EST</title>
+  <link>http://192.168.1.5:8000/Microblogger/feed/feed.xml</link>
+  <description><![CDATA[<h2>Testing Out My RSS Feed</h2>
+
+<p>This is a test for my RSS feed.</p>]]></description>
+  
+</channel>
+</rss>
